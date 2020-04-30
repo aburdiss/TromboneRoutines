@@ -15,6 +15,12 @@
 		9C3ABF55245B012500168CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C3ABF53245B012500168CDD /* LaunchScreen.storyboard */; };
 		9C3ABF60245B012600168CDD /* TromboneRoutinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF5F245B012600168CDD /* TromboneRoutinesTests.swift */; };
 		9C3ABF6B245B012600168CDD /* TromboneRoutinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF6A245B012600168CDD /* TromboneRoutinesUITests.swift */; };
+		9C3ABF79245B51A700168CDD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF78245B51A700168CDD /* MainView.swift */; };
+		9C3ABF7B245B52D800168CDD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF7A245B52D800168CDD /* SettingsView.swift */; };
+		9C3ABF7D245B532600168CDD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF7C245B532600168CDD /* ListView.swift */; };
+		9C3ABF81245B545700168CDD /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF80245B545700168CDD /* RoutineView.swift */; };
+		9C3ABF83245B642800168CDD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF82245B642800168CDD /* Model.swift */; };
+		9C3ABF85245B71BF00168CDD /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF84245B71BF00168CDD /* ExerciseDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9C3ABF45245B012000168CDD /* TromboneRoutines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TromboneRoutines.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3ABF45245B012000168CDD /* Tbn Routines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tbn Routines.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3ABF48245B012000168CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C3ABF4A245B012000168CDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9C3ABF4C245B012000168CDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		9C3ABF66245B012600168CDD /* TromboneRoutinesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TromboneRoutinesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3ABF6A245B012600168CDD /* TromboneRoutinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TromboneRoutinesUITests.swift; sourceTree = "<group>"; };
 		9C3ABF6C245B012600168CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C3ABF78245B51A700168CDD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9C3ABF7A245B52D800168CDD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9C3ABF7C245B532600168CDD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		9C3ABF80245B545700168CDD /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
+		9C3ABF82245B642800168CDD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9C3ABF84245B71BF00168CDD /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +101,7 @@
 		9C3ABF46245B012000168CDD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C3ABF45245B012000168CDD /* TromboneRoutines.app */,
+				9C3ABF45245B012000168CDD /* Tbn Routines.app */,
 				9C3ABF5B245B012600168CDD /* TromboneRoutinesTests.xctest */,
 				9C3ABF66245B012600168CDD /* TromboneRoutinesUITests.xctest */,
 			);
@@ -99,13 +111,19 @@
 		9C3ABF47245B012000168CDD /* TromboneRoutines */ = {
 			isa = PBXGroup;
 			children = (
-				9C3ABF48245B012000168CDD /* AppDelegate.swift */,
-				9C3ABF4A245B012000168CDD /* SceneDelegate.swift */,
 				9C3ABF4C245B012000168CDD /* ContentView.swift */,
+				9C3ABF78245B51A700168CDD /* MainView.swift */,
+				9C3ABF80245B545700168CDD /* RoutineView.swift */,
+				9C3ABF7C245B532600168CDD /* ListView.swift */,
+				9C3ABF84245B71BF00168CDD /* ExerciseDetailView.swift */,
+				9C3ABF7A245B52D800168CDD /* SettingsView.swift */,
+				9C3ABF82245B642800168CDD /* Model.swift */,
 				9C3ABF4E245B012500168CDD /* Assets.xcassets */,
 				9C3ABF53245B012500168CDD /* LaunchScreen.storyboard */,
 				9C3ABF56245B012500168CDD /* Info.plist */,
 				9C3ABF50245B012500168CDD /* Preview Content */,
+				9C3ABF4A245B012000168CDD /* SceneDelegate.swift */,
+				9C3ABF48245B012000168CDD /* AppDelegate.swift */,
 			);
 			path = TromboneRoutines;
 			sourceTree = "<group>";
@@ -153,7 +171,7 @@
 			);
 			name = TromboneRoutines;
 			productName = TromboneRoutines;
-			productReference = 9C3ABF45245B012000168CDD /* TromboneRoutines.app */;
+			productReference = 9C3ABF45245B012000168CDD /* Tbn Routines.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9C3ABF5A245B012600168CDD /* TromboneRoutinesTests */ = {
@@ -267,9 +285,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3ABF7B245B52D800168CDD /* SettingsView.swift in Sources */,
+				9C3ABF85245B71BF00168CDD /* ExerciseDetailView.swift in Sources */,
 				9C3ABF49245B012000168CDD /* AppDelegate.swift in Sources */,
+				9C3ABF7D245B532600168CDD /* ListView.swift in Sources */,
+				9C3ABF79245B51A700168CDD /* MainView.swift in Sources */,
+				9C3ABF81245B545700168CDD /* RoutineView.swift in Sources */,
 				9C3ABF4B245B012000168CDD /* SceneDelegate.swift in Sources */,
 				9C3ABF4D245B012000168CDD /* ContentView.swift in Sources */,
+				9C3ABF83245B642800168CDD /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +394,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Tbn Routines";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -423,6 +448,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Tbn Routines";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -444,7 +470,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,7 +490,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
