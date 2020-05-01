@@ -11,7 +11,6 @@ import SwiftUI
 struct MainView: View {
     @State var showDetail = false
     
-    
     var body: some View {
         NavigationView() {
             VStack {
@@ -19,12 +18,17 @@ struct MainView: View {
                     RoutineView(showSelf: $showDetail),
                                isActive: $showDetail
                 ) {
-                    Text("Begin Routine")
-                        .font(.headline)
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color.yellow, lineWidth: 1))
-                        .padding()
+                    HStack {
+                        Text("Begin Routine")
+                            .font(.title)
+                        Image(systemName: "play")
+                            .font(.title)
+                    }
+                    .padding()
+                    .overlay(RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.yellow, lineWidth: 2))
+                    .padding()
+                    
                 }
             }
             

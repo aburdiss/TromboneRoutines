@@ -9,104 +9,80 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var longTonesToggle = true {
-        didSet {
-            UserDefaults.standard.set(self.longTonesToggle, forKey: "Long Tones")
-        }
-    }
     
-    @State var slowLipSlursToggle = true {
-        didSet {
-            UserDefaults.standard.set(self.slowLipSlursToggle, forKey: "Slow Lip Slurs")
-        }
-    }
-    
-    @State var fastLipSlursToggle = true {
-        didSet {
-            UserDefaults.standard.set(self.fastLipSlursToggle, forKey: "Fast Lip Slurs")
-        }
-    }
-    
-    @State var staticArticulationToggle = true {
-        didSet {
-            UserDefaults.standard.set(self.staticArticulationToggle, forKey: "Static Articulation")
-        }
-    }
-    
-    @State var variableArticulationToggle = true {
-        didSet {
-            UserDefaults.standard.set(self.variableArticulationToggle, forKey: "Variable Articulation")
-        }
-    }
-    
-    @State var majorScalesToggle = true {
-        didSet {
-            UserDefaults.standard.set(self.majorScalesToggle, forKey: "Major Scales")
-        }
-    }
-    
-    @State var highRangeToggle = true {
-        didSet {
-            UserDefaults.standard.set(self.highRangeToggle, forKey: "High Range")
-        }
-    }
-    
-    @State var lowRangeToggle = true {
-        didSet {
-            UserDefaults.standard.set(self.lowRangeToggle, forKey: "Low Range")
-        }
-    }
-    
-    var highNoteNames: [String] = ["F4", "F♯4", "G♭4", "G4", "G♯4", "A♭4", "A4", "A♯4", "B♭4", "B4", "C5", "C♯5", "D♭5", "D5", "D♯5", "E♭5", "E5", "F5"]
-    
-    @State var highestNote = 0
+    @ObservedObject var settings = settingsModel()
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     Section(header: Text("Fundamentals")) {
-                        Toggle(isOn: $longTonesToggle) {
+                        Toggle(isOn: $settings.longTonesToggle) {
                             Text("Long Tones")
                         }
-                        Toggle(isOn: $slowLipSlursToggle) {
+                        Toggle(isOn: $settings.slowLipSlursToggle) {
                             Text("Slow Lip Slurs")
                         }
-                        Toggle(isOn: $fastLipSlursToggle) {
+                        Toggle(isOn: $settings.fastLipSlursToggle) {
                             Text("Fast Lip Slurs")
                         }
-                        Toggle(isOn: $staticArticulationToggle) {
+                        Toggle(isOn: $settings.staticArticulationToggle) {
                             Text("Single Note Articulation")
                         }
-                        Toggle(isOn: $variableArticulationToggle) {
+                        Toggle(isOn: $settings.variableArticulationToggle) {
                             Text("Changing Note Articulation")
                         }
-                        Toggle(isOn: $majorScalesToggle) {
+                        Toggle(isOn: $settings.majorScalesToggle) {
                             Text("Major Scales")
                         }
-                        Toggle(isOn: $highRangeToggle) {
+                        Toggle(isOn: $settings.highRangeToggle) {
                             Text("High Range")
                         }
-                        Toggle(isOn: $lowRangeToggle) {
+                        Toggle(isOn: $settings.lowRangeToggle) {
                             Text("Low Range")
                         }
                     }
-                    Section(header: Text("Range")) {
-                        Picker(selection: $highestNote, label:Text("Highest Note")) {
-                            ForEach(0 ..< highNoteNames.count) {
-                                Text(self.highNoteNames[$0])
-                            }
+                    Section(header: Text("Resources")) {
+                        Button(action: {
+                            let url = URL(string: "https://apps.apple.com/us/app/tbnxcerpts/id1503907981")!
+                            UIApplication.shared.open(url)
+                        }) {
+                            Text("Download TbnXcerpts")
+                        }
+                        Button(action: {
+                            let url = URL(string: "https://apps.apple.com/us/app/scale-practice-randomizer/id1496727056")!
+                            UIApplication.shared.open(url)
+                        }) {
+                            Text("Download Scale Practice - Randomizer")
+                        }
+                        Button(action: {
+                            let url = URL(string: "http://www.arsnovapublishing.com")!
+                            UIApplication.shared.open(url)
+                        }) {
+                            Text("Visit Ars Nova Publishing")
+                        }
+                        Button(action: {
+                            let url = URL(string: "http://www.bandroomonline.com")!
+                            UIApplication.shared.open(url)
+                        }) {
+                            Text("Visit Band Room Online")
+                        }
+                    }
+                    Section(header: Text("About")) {
+                        Text("©2020 Alexander Burdiss and Qian Yu")
+                        Button(action: {
+                            let url = URL(string: "mailto:aburdiss@gmail.com")!
+                            UIApplication.shared.open(url)
+                        }) {
+                            Text("Send Feedback")
                         }
                     }
                 }
                 .listStyle(GroupedListStyle())
-                
-                Text("©2020 Alexander Burdiss and Qian Yu")
-                    .padding(.bottom)
-                
             }
             .navigationBarTitle("Settings")
         }
+    .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

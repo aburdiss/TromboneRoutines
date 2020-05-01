@@ -16,6 +16,7 @@ struct ExerciseDetailView: View {
                 .resizable()
                 .scaledToFit()
         }
+    .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

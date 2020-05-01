@@ -9,16 +9,7 @@
 import SwiftUI
 
 struct RoutineView: View {
-    @State private var longTonesSelect = UserDefaults.standard.bool(forKey: "Long Tones")
-    @State private var slowLipSlursSelect = UserDefaults.standard.bool(forKey: "Slow Lip Slurs")
-    @State private var fastLipSlursSelect = UserDefaults.standard.bool(forKey: "Fast Lip Slurs")
-    @State private var staticArticulationSelect = UserDefaults.standard.bool(forKey: "Static Articulation")
-    @State private var variableArticulationSelect = UserDefaults.standard.bool(forKey: "Variable Articulation")
-    @State private var scalesSelect = UserDefaults.standard.bool(forKey: "Scales")
-    @State private var HighRangeSelect = UserDefaults.standard.bool(forKey: "High Range")
-    @State private var LowRangeSelect = UserDefaults.standard.bool(forKey: "Low Range")
-    
-    
+    @ObservedObject var settings = settingsModel()
     
     @Binding var showSelf: Bool
     @State private var finishedRoutine = false
@@ -64,29 +55,67 @@ struct RoutineView: View {
      Generates a random routine from available exercises
      */
     func generateRoutine() {
+        checkDefaults()
+        
         var tempExercise: String
         var newRoutine: [String] = []
         
         /// Adds one long tone
-        
-        newRoutine.append(longTones.randomElement()!)
+        if self.settings.longTonesToggle {
+             newRoutine.append(longTones.randomElement()!)
+        }
+       
         /// Adds two slow lip slurs
-        newRoutine.append(slowLipSlurs.randomElement()!)
-        repeat {
-            tempExercise = slowLipSlurs.randomElement()!
-        } while newRoutine.contains(tempExercise) == true
-        newRoutine.append(tempExercise)
+        if self.settings.slowLipSlursToggle {
+            newRoutine.append(slowLipSlurs.randomElement()!)
+            repeat {
+                tempExercise = slowLipSlurs.randomElement()!
+            } while newRoutine.contains(tempExercise)
+            newRoutine.append(tempExercise)
+        }
+       
+        
         /// Adds two fast lip slurs
-        
-        /// Adds one static articulation
-        
-        /// Adds one variable articulation
-        
+        if self.settings.fastLipSlursToggle {
+            newRoutine.append(fastLipSlurs.randomElement()!)
+            repeat {
+                tempExercise = fastLipSlurs.randomElement()!
+            } while newRoutine.contains(tempExercise)
+            newRoutine.append(tempExercise)
+        }
+
+        /// Adds two static articulation
+        if self.settings.staticArticulationToggle {
+             newRoutine.append(staticArticulation.randomElement()!)
+            repeat {
+                tempExercise = staticArticulation.randomElement()!
+            } while newRoutine.contains(tempExercise)
+            newRoutine.append(tempExercise)
+        }
+
+        /// Adds two variable articulation
+        if settings.variableArticulationToggle {
+            newRoutine.append(variableArticulation.randomElement()!)
+            repeat {
+                tempExercise = variableArticulation.randomElement()!
+            } while newRoutine.contains(tempExercise)
+            newRoutine.append(tempExercise)
+        }
+
         /// Adds one scale
-        
+        if settings.majorScalesToggle {
+            newRoutine.append(scales.randomElement()!)
+        }
+
         /// Adds one high range
-        
+        if settings.highRangeToggle {
+            newRoutine.append(highRange.randomElement()!)
+        }
+
         /// Adds one low range
+        if settings.lowRangeToggle  {
+            newRoutine.append(lowRange.randomElement()!)
+        }
         
         /// Sets new routine
         self.routine = newRoutine
@@ -111,6 +140,27 @@ struct RoutineView: View {
             self.showSelf = false
         } else {
             self.thisExercise -= 1
+        }
+    }
+    
+    func checkDefaults() {
+        if !settings.longTonesToggle &&
+            !settings.slowLipSlursToggle &&
+            !settings.fastLipSlursToggle &&
+            !settings.staticArticulationToggle &&
+            !settings.variableArticulationToggle &&
+            !settings.majorScalesToggle &&
+            !settings.highRangeToggle &&
+            !settings.lowRangeToggle
+        {
+            settings.longTonesToggle = true
+            settings.slowLipSlursToggle = true
+            settings.fastLipSlursToggle = true
+            settings.staticArticulationToggle = true
+            settings.variableArticulationToggle = true
+            settings.majorScalesToggle = true
+            settings.highRangeToggle = true
+            settings.lowRangeToggle = true
         }
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import TromboneRoutines
 
 class TromboneRoutinesTests: XCTestCase {
 
