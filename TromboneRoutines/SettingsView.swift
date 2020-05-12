@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @ObservedObject var settings = settingsModel()
+    @EnvironmentObject var settings: settingsModel
     
     var body: some View {
         NavigationView {
@@ -41,6 +41,15 @@ struct SettingsView: View {
                         Toggle(isOn: $settings.lowRangeToggle) {
                             Text("Low Range")
                         }
+                        
+                    }
+                    Section(header: Text("Routine Length")) {
+                        Picker(selection: $settings.selectedDifficulty, label:Text("Routine Length")) {
+                            ForEach(0 ..< 3) {
+                                Text(self.settings.difficulties[$0])
+                            }
+                        }
+                    .pickerStyle(SegmentedPickerStyle())
                     }
                     Section(header: Text("Resources")) {
                         Button(action: {
@@ -80,6 +89,7 @@ struct SettingsView: View {
                 }
                 .listStyle(GroupedListStyle())
             }
+            .environmentObject(settings)
             .navigationBarTitle("Settings")
         }
     .navigationViewStyle(StackNavigationViewStyle())
@@ -88,6 +98,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView().environmentObject(settingsModel())
     }
 }

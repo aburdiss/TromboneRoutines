@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ExerciseDetailView: View {
+    @EnvironmentObject var favorites: Favorites
     var image: String
     var body: some View {
         VStack{
@@ -16,6 +17,23 @@ struct ExerciseDetailView: View {
                 .resizable()
                 .scaledToFit()
         }
+    .navigationBarItems(trailing:
+        Button(action: {
+            if self.favorites.contains(self.image) {
+                self.favorites.remove(self.image)
+            } else {
+                self.favorites.add(self.image)
+            }
+        }) {
+            favorites.contains(image) ?
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+                :
+                Image(systemName: "heart")
+                    .foregroundColor(.yellow)
+        }
+        .padding()
+    )
     .navigationViewStyle(StackNavigationViewStyle())
     }
 }

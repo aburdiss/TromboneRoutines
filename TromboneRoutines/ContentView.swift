@@ -28,6 +28,9 @@ struct ContentView: View {
             }
             
         }
+        .environmentObject(settingsModel())
+        .environmentObject(Favorites())
+        .animation(.none)
         .accentColor(Color.yellow)
     }
 }
