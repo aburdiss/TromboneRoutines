@@ -8,9 +8,28 @@
 
 import SwiftUI
 
+/**
+ Allows the user to taylor the routine to their needs. Resources and other options displayed in this view.
+ */
 struct SettingsView: View {
+    /**
+     The user selected preferences.
+     */
     @EnvironmentObject var settings: settingsModel
     
+    /**
+     The user selected Favorites
+     */
+    @EnvironmentObject var favorites: Favorites
+    
+    /**
+     State variable that determines whether the resettingFavorites Alert Sheet will show.
+     */
+    @State private var resettingFavoritesAlert = false
+    
+    /**
+     The user interface
+     */
     var body: some View {
         NavigationView {
             VStack {
@@ -40,7 +59,6 @@ struct SettingsView: View {
                         Toggle(isOn: $settings.lowRangeToggle) {
                             Text("Low Range")
                         }
-                        
                     }
                     Section(header: Text("Routine Length")) {
                         Picker(selection: $settings.selectedDifficulty, label:Text("Routine Length")) {
@@ -48,41 +66,95 @@ struct SettingsView: View {
                                 Text(self.settings.difficulties[$0])
                             }
                         }
-                    .pickerStyle(SegmentedPickerStyle())
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+                    Section(header: Text("Favorites")) {
+                        Button(action: {
+                            self.resettingFavoritesAlert = true
+                        }) {
+                            HStack {
+                                Text("Reset Favorites")
+                                Image(systemName: "heart.slash")
+                            }
+                        }
+                        .alert(isPresented: $resettingFavoritesAlert) {
+                            Alert(title: Text("All favorites will be removed"), message: Text("This cannot be undone!"), primaryButton: .destructive(Text("Reset")) {
+                                self.resetFavorites()
+                            }, secondaryButton: .cancel())
+                        }
                     }
                     Section(header: Text("Resources")) {
                         Button(action: {
                             let url = URL(string: "https://apps.apple.com/us/app/tbnxcerpts/id1503907981")!
                             UIApplication.shared.open(url)
                         }) {
-                            Text("Download TbnXcerpts")
+                            HStack {
+                                Image("TbnXcerptsIcon")
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 29, height: 29)
+                                .mask(RoundedRectangle(cornerRadius: 7.0))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 7.0)
+                                        .stroke(Color.gray, lineWidth: 0.3)
+                                )
+                                Text("Download TbnXcerpts")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
                         }
                         Button(action: {
                             let url = URL(string: "https://apps.apple.com/us/app/scale-practice-randomizer/id1496727056")!
                             UIApplication.shared.open(url)
                         }) {
-                            Text("Download Scale Practice - Randomizer")
+                            HStack {
+                                Image("ScalePracticeIcon")
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 29, height: 29)
+                                .mask(RoundedRectangle(cornerRadius: 7.0))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 7.0)
+                                        .stroke(Color.gray, lineWidth: 0.3)
+                                )
+                                Text("Download Scale Practice - Randomizer")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
                         }
                         Button(action: {
                             let url = URL(string: "http://www.arsnovapublishing.com")!
                             UIApplication.shared.open(url)
                         }) {
-                            Text("Visit Ars Nova Publishing")
+                            
+                            HStack {
+                                Text("Visit Ars Nova Publishing")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
                         }
                         Button(action: {
                             let url = URL(string: "http://www.bandroomonline.com")!
                             UIApplication.shared.open(url)
                         }) {
-                            Text("Visit Band Room Online")
+                            HStack {
+                                Text("Visit Band Room Online")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
                         }
                     }
                     Section(header: Text("About")) {
-                        Text("©2020 Alexander Burdiss and Qian Yu")
+                        Text("© 2020 Alexander Burdiss")
                         Button(action: {
                             let url = URL(string: "mailto:aburdiss@gmail.com")!
                             UIApplication.shared.open(url)
                         }) {
-                            Text("Send Feedback")
+                            HStack {
+                                Text("Send Feedback")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
                         }
                     }
                 }
@@ -91,7 +163,14 @@ struct SettingsView: View {
             .environmentObject(settings)
             .navigationBarTitle("Settings")
         }
-    .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    /**
+     Removes all favorites from the favorites model.
+     */
+    func resetFavorites() {
+        self.favorites.removeAll()
     }
 }
 
