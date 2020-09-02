@@ -21,6 +21,7 @@
 		9C3ABF81245B545700168CDD /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF80245B545700168CDD /* RoutineView.swift */; };
 		9C3ABF83245B642800168CDD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF82245B642800168CDD /* Model.swift */; };
 		9C3ABF85245B71BF00168CDD /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3ABF84245B71BF00168CDD /* ExerciseDetailView.swift */; };
+		DD88BCF824FC43450000B737 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD88BCFA24FC43450000B737 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,6 @@
 		9C3ABF4C245B012000168CDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9C3ABF4E245B012500168CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C3ABF51245B012500168CDD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9C3ABF54245B012500168CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C3ABF56245B012500168CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C3ABF5B245B012600168CDD /* TromboneRoutinesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TromboneRoutinesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3ABF5F245B012600168CDD /* TromboneRoutinesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TromboneRoutinesTests.swift; sourceTree = "<group>"; };
@@ -61,6 +61,11 @@
 		9C3ABF80245B545700168CDD /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
 		9C3ABF82245B642800168CDD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9C3ABF84245B71BF00168CDD /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
+		DD88BCF724FC42D80000B737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD88BCF924FC43450000B737 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DD88BCFB24FC43590000B737 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DD88BCFC24FC436C0000B737 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DD88BD0124FD0E130000B737 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 		9C3ABF3C245B012000168CDD = {
 			isa = PBXGroup;
 			children = (
+				DD88BCFA24FC43450000B737 /* Localizable.strings */,
 				9C3ABF47245B012000168CDD /* TromboneRoutines */,
 				9C3ABF5E245B012600168CDD /* TromboneRoutinesTests */,
 				9C3ABF69245B012600168CDD /* TromboneRoutinesUITests */,
@@ -240,6 +246,9 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
+				fr,
+				"zh-Hans",
 			);
 			mainGroup = 9C3ABF3C245B012000168CDD;
 			productRefGroup = 9C3ABF46245B012000168CDD /* Products */;
@@ -259,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C3ABF55245B012500168CDD /* LaunchScreen.storyboard in Resources */,
+				DD88BCF824FC43450000B737 /* Localizable.strings in Resources */,
 				9C3ABF52245B012500168CDD /* Preview Assets.xcassets in Resources */,
 				9C3ABF4F245B012500168CDD /* Assets.xcassets in Resources */,
 			);
@@ -332,9 +342,20 @@
 		9C3ABF53245B012500168CDD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9C3ABF54245B012500168CDD /* Base */,
+				DD88BCF724FC42D80000B737 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DD88BCFA24FC43450000B737 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD88BCF924FC43450000B737 /* en */,
+				DD88BCFB24FC43590000B737 /* es-419 */,
+				DD88BCFC24FC436C0000B737 /* fr */,
+				DD88BD0124FD0E130000B737 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -344,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -405,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -461,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_ASSET_PATHS = "\"TromboneRoutines/Preview Content\"";
 				DEVELOPMENT_TEAM = L4SN53B3F6;
 				ENABLE_PREVIEWS = YES;
@@ -469,7 +493,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
 				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
@@ -482,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_ASSET_PATHS = "\"TromboneRoutines/Preview Content\"";
 				DEVELOPMENT_TEAM = L4SN53B3F6;
 				ENABLE_PREVIEWS = YES;
@@ -490,7 +515,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
 				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;

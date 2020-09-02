@@ -48,10 +48,10 @@ struct SettingsView: View {
                             Text("Single Note Articulation")
                         }
                         Toggle(isOn: $settings.variableArticulationToggle) {
-                            Text("Changing Note Articulation")
+                            Text("Moving Note Articulation")
                         }
                         Toggle(isOn: $settings.majorScalesToggle) {
-                            Text("Major Scales")
+                            Text("Scales")
                         }
                         Toggle(isOn: $settings.highRangeToggle) {
                             Text("High Range")
@@ -63,7 +63,7 @@ struct SettingsView: View {
                     Section(header: Text("Routine Length")) {
                         Picker(selection: $settings.selectedDifficulty, label:Text("Routine Length")) {
                             ForEach(0 ..< 3) {
-                                Text(self.settings.difficulties[$0])
+                                Text(NSLocalizedString(self.settings.difficulties[$0], comment: ""))
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
