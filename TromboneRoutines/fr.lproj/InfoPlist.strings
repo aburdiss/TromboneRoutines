@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  TromboneRoutines
+
+  Created by Alexander Burdiss on 9/9/20.
+  Copyright © 2020 Alex Burdiss. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Routines de Tbn";
+"CFBundleName" = "Routines de Trombone";

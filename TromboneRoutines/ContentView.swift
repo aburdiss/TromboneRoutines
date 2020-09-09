@@ -27,6 +27,11 @@ struct ContentView: View {
                     Image(systemName: "folder")
                     Text("All Exercises")
             }
+            CustomView()
+                .tabItem {
+                    Image(systemName: "pencil")
+                    Text("Custom")
+            }
             SettingsView()
                 .tabItem {
                     Image(systemName: "slider.horizontal.3")
