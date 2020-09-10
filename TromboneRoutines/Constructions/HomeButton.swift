@@ -22,7 +22,7 @@ struct HomeButton: View {
      */
     var body: some View {
         HStack {
-            Text(text)
+            Text(NSLocalizedString(text, comment: ""))
                 .font(.title)
             Image(systemName: "play")
                 .font(.title)

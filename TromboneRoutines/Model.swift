@@ -200,4 +200,89 @@ class Favorites: ObservableObject {
         // write out data
         UserDefaults.standard.set(self.images, forKey: saveKey)
     }
+    
+    func isEmpty() -> Bool {
+        return self.images.count == 0
+    }
+    
+    func getAllFavorites() -> [String] {
+        return self.images
+    }
+}
+
+
+
+
+
+struct CustomRoutine: Equatable {
+    var name: String
+    var routine: [String]
+}
+
+class CustomRoutineWrapper {
+    var routines: [CustomRoutine] = []
+    
+    func contains (routine: CustomRoutine) -> Bool {
+        return self.routines.contains(routine);
+    }
+}
+
+class CustomRoutines: ObservableObject {
+    // the actual routines the user created
+    private var routines: [CustomRoutine]
+
+    // the key we're using to read/write in UserDefaults
+    private let saveKey = "Routines"
+
+    init() {
+        // load saved data
+        let savedRoutines = UserDefaults.standard.object(forKey: saveKey) as? CustomRoutineWrapper ?? CustomRoutineWrapper()
+        self.routines = savedRoutines.routines
+    }
+
+    // returns true if set contains favorite
+    func contains(_ routine: CustomRoutine) -> Bool {
+        routines.contains(routine)
+    }
+
+    // adds the favorite to set, updates all views, and saves the change
+    func add(_ routine: CustomRoutine) {
+        objectWillChange.send()
+        routines.append(routine)
+        save()
+    }
+
+    // removes the favorite from set, updates all views, and saves change
+    func remove(_ routine: CustomRoutine) {
+        objectWillChange.send()
+        var counter = 0
+        var removeIndex = 0
+        while counter < routines.count {
+            if routines[counter] == routine {
+                removeIndex = counter
+            }
+            counter += 1
+        }
+        routines.remove(at: removeIndex)
+        save()
+    }
+    
+    func removeAll() {
+        objectWillChange.send()
+        routines.removeAll()
+        save()
+    }
+
+    func save() {
+        // write out data
+        UserDefaults.standard.set(self.routines, forKey: saveKey)
+    }
+    
+    func isEmpty() -> Bool {
+        return self.routines.count == 0
+    }
+    
+    func getAllFavorites() -> [CustomRoutine] {
+        return self.routines
+    }
 }

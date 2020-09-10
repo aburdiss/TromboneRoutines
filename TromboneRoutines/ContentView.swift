@@ -27,7 +27,7 @@ struct ContentView: View {
                     Image(systemName: "folder")
                     Text("All Exercises")
             }
-            CustomView()
+            CustomListView()
                 .tabItem {
                     Image(systemName: "pencil")
                     Text("Custom")
@@ -40,6 +40,7 @@ struct ContentView: View {
         }
         .environmentObject(settingsModel())
         .environmentObject(Favorites())
+        .environmentObject(CustomRoutines())
         .animation(.none)
         .accentColor(Color.yellow)
     }

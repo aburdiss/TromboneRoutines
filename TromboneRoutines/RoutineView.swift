@@ -52,8 +52,9 @@ struct RoutineView: View {
                 .scaledToFit()
         }
         .alert(isPresented: $finishedRoutine) {
-            Alert(title: Text("Daily Routine Complete!"), dismissButton: .default(Text("Return")) {
-                self.presentationMode.wrappedValue.dismiss()
+            Alert(title: Text("Daily Routine Complete!"), dismissButton:
+                .default(Text("Return")) {
+                    self.presentationMode.wrappedValue.dismiss()
                 }
             )
         }
