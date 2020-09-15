@@ -90,7 +90,6 @@ struct FavoritesView: View {
                 )
             }
         })
-        .environmentObject(favorites)
         .onAppear() {
             self.loadFavorites()
         }

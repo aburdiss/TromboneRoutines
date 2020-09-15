@@ -11,7 +11,7 @@ import SwiftUI
 /**
  A view showing one custom routine, with the functionality to move through the routine.
  */
-struct CustomView: View {
+struct CustomRoutineView: View {
     /**
      The custom routines created by the user
      */
@@ -130,6 +130,6 @@ struct CustomView: View {
 
 struct CustomView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomView(routine: CustomRoutine(name: "My First Routine", routine: ["1", "2", "3"]))
+        CustomRoutineView(routine: CustomRoutine(name: "My First Routine", routine: ["1", "2", "3"]))
     }
 }

@@ -32,41 +32,24 @@ struct ExerciseDetailView: View {
                 .scaledToFit()
         }
         .navigationBarItems(trailing:
-            HStack(alignment: .bottom) {
-                Button(action: {
-                    self.addToList()
-                }) {
-                    Image(systemName: "text.badge.plus")
-                        .padding(.trailing)
+            Button(action: {
+                if self.favorites.contains(self.image) {
+                    self.favorites.remove(self.image)
+                } else {
+                    self.favorites.add(self.image)
                 }
-                Button(action: {
-                    if self.favorites.contains(self.image) {
-                        self.favorites.remove(self.image)
-                    } else {
-                        self.favorites.add(self.image)
-                    }
-                }) {
-                    favorites.contains(image)
-                    ?
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.red)
-                    :
-                    Image(systemName: "heart")
-                        .foregroundColor(.yellow)
-                }
+            }) {
+                favorites.contains(image)
+                ?
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+                :
+                Image(systemName: "heart")
+                    .foregroundColor(.yellow)
             }
             .padding()
         )
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-    
-    /**
-     Adds the exercise to a selected list
-     */
-    func addToList() {
-        // deploy a modal showing the saved lists
-        
-        // on click of a list, add scale to end of list, hide modal
     }
 }
 

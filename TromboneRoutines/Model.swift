@@ -49,6 +49,11 @@ let highRange: [String] = ["70", "71", "72", "73", "74", "75", "76", "77", "78"]
 let lowRange: [String] = ["80", "81", "82", "83", "84", "85", "86", "87"]
 
 /**
+ Array of all of the exercises in the app
+ */
+let allExercises: [String] = longTones + slowLipSlurs + fastLipSlurs + staticArticulation + variableArticulation + scales + highRange + lowRange
+
+/**
  The logic responsible for setting and retrieving user defined settings in local memory. Settings persist between app termination and launch.
  */
 class settingsModel: ObservableObject {
@@ -214,30 +219,28 @@ class Favorites: ObservableObject {
 
 
 
-struct CustomRoutine: Equatable {
+struct CustomRoutine: Equatable, Identifiable, Codable {
+    var id = UUID()
     var name: String
     var routine: [String]
 }
 
-class CustomRoutineWrapper {
-    var routines: [CustomRoutine] = []
-    
-    func contains (routine: CustomRoutine) -> Bool {
-        return self.routines.contains(routine);
-    }
-}
-
 class CustomRoutines: ObservableObject {
     // the actual routines the user created
-    private var routines: [CustomRoutine]
-
+    @Published var routines: [CustomRoutine] = []
+    
     // the key we're using to read/write in UserDefaults
     private let saveKey = "Routines"
 
     init() {
-        // load saved data
-        let savedRoutines = UserDefaults.standard.object(forKey: saveKey) as? CustomRoutineWrapper ?? CustomRoutineWrapper()
-        self.routines = savedRoutines.routines
+        if let data = UserDefaults.standard.data(forKey: saveKey) {
+            if let decoded = try? JSONDecoder().decode([CustomRoutine].self, from: data) {
+                self.routines = decoded
+                return
+            }
+        }
+        
+        self.routines = []
     }
 
     // returns true if set contains favorite
@@ -274,15 +277,16 @@ class CustomRoutines: ObservableObject {
     }
 
     func save() {
-        // write out data
-        UserDefaults.standard.set(self.routines, forKey: saveKey)
+        if let encoded = try? JSONEncoder().encode(routines) {
+            UserDefaults.standard.set(encoded, forKey: saveKey)
+        }
     }
     
     func isEmpty() -> Bool {
         return self.routines.count == 0
     }
     
-    func getAllFavorites() -> [CustomRoutine] {
+    func getAllRoutines() -> [CustomRoutine] {
         return self.routines
     }
 }

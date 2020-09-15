@@ -102,7 +102,6 @@ struct RoutineView: View {
                 }
             }
         })
-        .environmentObject(favorites)
         .onAppear() {
             self.generateRoutine()
         }
