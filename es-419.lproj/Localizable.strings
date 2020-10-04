@@ -52,6 +52,7 @@
 "Reset Favorites" = "Restablecer Favoritos";
 "Reset Custom Routines" = "Restablecer Rutinas Personalizadas";
 "All favorites will be removed" = "Todos los favoritos serán eliminados";
+"All custom routines will be removed" = "Todos los rutinas personalizadas serán eliminados";
 "This cannot be undone!" = "¡Esto no se puede deshacer!";
 "Reset" = "Reiniciar";
 "Resources" = "Recursos";

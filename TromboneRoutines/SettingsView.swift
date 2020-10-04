@@ -197,6 +197,9 @@ struct SettingsView: View {
         self.favorites.removeAll()
     }
     
+    /**
+     Removes all custom routines in the custom routines model
+     */
     func resetCustomRoutines() {
         self.customRoutines.removeAll()
     }

@@ -185,6 +185,7 @@
 		DD35D9EC25088FAB00082FAF /* Constructions */ = {
 			isa = PBXGroup;
 			children = (
+				DDA7846C250E8A8000EC0E3E /* ExercisePickerView.swift */,
 				DD35D9ED25088FBE00082FAF /* HomeButton.swift */,
 			);
 			path = Constructions;
@@ -206,7 +207,6 @@
 				DD2EA02E25097FC800A36E13 /* CustomRoutineView.swift */,
 				DD35D9F52509631000082FAF /* CreateCustomView.swift */,
 				DDA7846A250E818B00EC0E3E /* CustomPreviewView.swift */,
-				DDA7846C250E8A8000EC0E3E /* ExercisePickerView.swift */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Alex Burdiss";
 				TargetAttributes = {
 					9C3ABF44245B012000168CDD = {
@@ -458,6 +458,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -482,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -520,6 +521,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -538,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "Tbn Routines";
@@ -554,7 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0.0;
+				CURRENT_PROJECT_VERSION = 2.0.2;
 				DEVELOPMENT_ASSET_PATHS = "\"TromboneRoutines/Preview Content\"";
 				DEVELOPMENT_TEAM = L4SN53B3F6;
 				ENABLE_PREVIEWS = YES;
@@ -563,7 +565,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
 				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
@@ -576,7 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0.0;
+				CURRENT_PROJECT_VERSION = 2.0.2;
 				DEVELOPMENT_ASSET_PATHS = "\"TromboneRoutines/Preview Content\"";
 				DEVELOPMENT_TEAM = L4SN53B3F6;
 				ENABLE_PREVIEWS = YES;
@@ -585,7 +587,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
 				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
