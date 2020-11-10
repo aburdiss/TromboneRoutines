@@ -78,6 +78,8 @@
 		DD35D9EF2508919700082FAF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		DD35D9F12508921800082FAF /* CustomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListView.swift; sourceTree = "<group>"; };
 		DD35D9F52509631000082FAF /* CreateCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomView.swift; sourceTree = "<group>"; };
+		DD75A6B2255B03CB001ABEA0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DD75A6B3255B03CB001ABEA0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DD88BCF724FC42D80000B737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD88BCF924FC43450000B737 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DD88BCFB24FC43590000B737 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				fr,
 				"zh-Hans",
 				ja,
+				ko,
 			);
 			mainGroup = 9C3ABF3C245B012000168CDD;
 			productRefGroup = 9C3ABF46245B012000168CDD /* Products */;
@@ -417,6 +420,7 @@
 				DD35D9EA25088F3900082FAF /* fr */,
 				DD35D9EB25088F3B00082FAF /* es-419 */,
 				DDACEE16255A39A20045125D /* ja */,
+				DD75A6B3255B03CB001ABEA0 /* ko */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -429,6 +433,7 @@
 				DD88BCFC24FC436C0000B737 /* fr */,
 				DD88BD0124FD0E130000B737 /* zh-Hans */,
 				DDACEE14255A39A10045125D /* ja */,
+				DD75A6B2255B03CB001ABEA0 /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -561,7 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.1.0;
+				CURRENT_PROJECT_VERSION = 2.2.0;
 				DEVELOPMENT_ASSET_PATHS = "\"TromboneRoutines/Preview Content\"";
 				DEVELOPMENT_TEAM = L4SN53B3F6;
 				ENABLE_PREVIEWS = YES;
@@ -570,7 +575,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
 				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
@@ -583,7 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.1.0;
+				CURRENT_PROJECT_VERSION = 2.2.0;
 				DEVELOPMENT_ASSET_PATHS = "\"TromboneRoutines/Preview Content\"";
 				DEVELOPMENT_TEAM = L4SN53B3F6;
 				ENABLE_PREVIEWS = YES;
@@ -592,7 +597,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
 				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
