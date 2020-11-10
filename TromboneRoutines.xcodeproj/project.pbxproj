@@ -85,6 +85,8 @@
 		DD88BD0124FD0E130000B737 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		DDA7846A250E818B00EC0E3E /* CustomPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPreviewView.swift; sourceTree = "<group>"; };
 		DDA7846C250E8A8000EC0E3E /* ExercisePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePickerView.swift; sourceTree = "<group>"; };
+		DDACEE14255A39A10045125D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DDACEE16255A39A20045125D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				"es-419",
 				fr,
 				"zh-Hans",
+				ja,
 			);
 			mainGroup = 9C3ABF3C245B012000168CDD;
 			productRefGroup = 9C3ABF46245B012000168CDD /* Products */;
@@ -413,6 +416,7 @@
 				DD35D9E925088F3800082FAF /* zh-Hans */,
 				DD35D9EA25088F3900082FAF /* fr */,
 				DD35D9EB25088F3B00082FAF /* es-419 */,
+				DDACEE16255A39A20045125D /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -424,6 +428,7 @@
 				DD88BCFB24FC43590000B737 /* es-419 */,
 				DD88BCFC24FC436C0000B737 /* fr */,
 				DD88BD0124FD0E130000B737 /* zh-Hans */,
+				DDACEE14255A39A10045125D /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -556,7 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0.2;
+				CURRENT_PROJECT_VERSION = 2.1.0;
 				DEVELOPMENT_ASSET_PATHS = "\"TromboneRoutines/Preview Content\"";
 				DEVELOPMENT_TEAM = L4SN53B3F6;
 				ENABLE_PREVIEWS = YES;
@@ -565,7 +570,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
 				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
@@ -578,7 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0.2;
+				CURRENT_PROJECT_VERSION = 2.1.0;
 				DEVELOPMENT_ASSET_PATHS = "\"TromboneRoutines/Preview Content\"";
 				DEVELOPMENT_TEAM = L4SN53B3F6;
 				ENABLE_PREVIEWS = YES;
@@ -587,7 +592,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderBurdiss.TromboneRoutines;
 				PRODUCT_NAME = "Tbn Routines";
 				SWIFT_VERSION = 5.0;
